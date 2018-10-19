@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="baseDao"  class="com.fxyh.db.BaseDao">
+	</bean>
+	<bean id="user" scope="single" class="com.fxyh.entity.User">
+		<property name="userName" value="fxyh"/>
+		<property name="password" value="18"/>
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+</beans>
