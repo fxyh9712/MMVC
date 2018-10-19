@@ -45,7 +45,12 @@ public class ClassScanner {
 				//通过url去判断这个是文件对象(文件夹)才进入这个操作
 				if ("file".equals(url.getProtocol())) {	//类路径的处理方式
 					//System.out.println(url.getPath());
-					File folder = new File(url.getPath().substring(1));
+					File folder = null;
+					if(System.getProperty("os.name").toLowerCase().startsWith("win")){  
+						folder = new File(url.getPath().substring(1));//Windows操作系统
+					}else if(System.getProperty("os.name").toLowerCase().startsWith("linux")) {
+						folder = new File(url.getPath());//Linux操作系统
+					}
 					//扫描文件夹下的所有类（包括子包-子文件夹）
 					scannerFile(folder, rootPath, result);
 				}else if("jar".equals(url.getProtocol())){	//jar包的处理方式
@@ -124,9 +129,9 @@ public class ClassScanner {
 		
 	}
 	
-	/*public static void main(String[] args) {
-		//scannerClass("com.prosay.core");
+	public static void main(String[] args) {
+		//System.out.println(scannerClass("com.fxyh.core"));
 		//scannerClass("org.dom4j");
 	}
-	*/
+	
 }

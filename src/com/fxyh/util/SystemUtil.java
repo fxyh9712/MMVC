@@ -5,6 +5,11 @@ import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 常量定义工具类
+ * @author fxyh
+ *
+ */
 public class SystemUtil {
 
 	public static final String USERENCODE = "[prosay]";

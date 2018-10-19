@@ -5,7 +5,7 @@ import com.fxyh.entity.User;
 
 /**
  * 测试通过xml配置初始化bean容器
- * @author fxyh
+ * @author prosay-fxyh
  *
  */
 public class ApplicationTest {
